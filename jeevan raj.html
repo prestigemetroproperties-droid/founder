@@ -1,794 +1,826 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#07182d">
-
-<title>Mr. Jeevan Raj | Prestige Metro Properties</title>
-
-<style>
-:root {
-    --navy: #07182d;
-    --navy-light: #102a4b;
-    --gold: #d6ad58;
-    --gold-light: #f3dfaa;
-    --cream: #f7f5ef;
-    --white: #ffffff;
-    --text: #182438;
-    --muted: #667085;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 90px;
-}
-
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: var(--cream);
-    color: var(--text);
-    line-height: 1.7;
-    overflow-x: hidden;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.container {
-    width: min(1160px, 92%);
-    margin: auto;
-}
-
-/* HEADER */
-
-.hero {
-    position: relative;
-    overflow: hidden;
-    color: white;
-    background:
-        radial-gradient(circle at 78% 25%, rgba(45,79,122,.65), transparent 32%),
-        linear-gradient(130deg, #020914 0%, var(--navy) 55%, #17365c 100%);
-}
-
-nav {
-    position: relative;
-    z-index: 5;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-    padding: 24px 0;
-    border-bottom: 1px solid rgba(255,255,255,.12);
-}
-
-/* COMPANY LOGO + NAME */
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex-shrink: 0;
-}
-
-.brand-logo {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-    display: block;
-    flex-shrink: 0;
-}
-
-.brand-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.4;
-}
-
-.brand-name {
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    color: #fff;
-}
-
-.brand-text small {
-    display: block;
-    margin-top: 4px;
-    font-size: 9px;
-    letter-spacing: 4px;
-    color: var(--gold-light);
-}
-
-/* NAVIGATION */
-
-.nav-links {
-    display: flex;
-    gap: 26px;
-    font-size: 13px;
-    color: #e6eaf0;
-}
-
-.nav-links a {
-    transition: color .25s ease;
-}
-
-.nav-links a:hover {
-    color: var(--gold-light);
-}
-
-/* HERO CONTENT */
-
-.hero-content {
-    display: grid;
-    grid-template-columns: 1.1fr .9fr;
-    align-items: center;
-    gap: 70px;
-    padding: 82px 0 100px;
-}
-
-.eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--gold-light);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-
-.eyebrow::before {
-    content: "";
-    width: 35px;
-    height: 1px;
-    background: var(--gold);
-}
-
-h1 {
-    font: clamp(42px, 6vw, 76px)/1.08 Georgia, serif;
-    font-weight: 400;
-    margin: 22px 0 12px;
-    letter-spacing: -1.5px;
-}
-
-h1 span {
-    color: var(--gold-light);
-}
-
-.role {
-    color: var(--gold-light);
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    font-size: 15px;
-}
-
-.company-name {
-    font-size: 17px;
-    margin-top: 5px;
-    color: #e5ebf4;
-}
-
-.hero-copy {
-    max-width: 560px;
-    color: #cbd6e5;
-    font-size: 17px;
-    margin-top: 22px;
-}
-
-/* BUTTON */
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 14px 24px;
-    margin-top: 30px;
-    background: linear-gradient(135deg, var(--gold-light), var(--gold));
-    color: var(--navy);
-    font-weight: 700;
-    font-size: 13px;
-    border-radius: 3px;
-    box-shadow: 0 12px 30px rgba(0,0,0,.18);
-    transition: transform .25s, box-shadow .25s;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 34px rgba(0,0,0,.28);
-}
-
-/* SQUARE FOUNDER PHOTO */
-
-.founder-visual {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 12px;
-}
-
-.photo-frame {
-    position: relative;
-    width: min(100%, 390px);
-    aspect-ratio: 1 / 1;
-    padding: 9px;
-    background: linear-gradient(
-        135deg,
-        #f5df9d,
-        #b9852b,
-        #f1d88b,
-        #8c641e
-    );
-    box-shadow: 0 24px 70px rgba(0,0,0,.4);
-    border-radius: 0;
-}
-
-.photo-frame::before {
-    content: "";
-    position: absolute;
-    inset: 5px;
-    border: 1px solid rgba(7,24,45,.55);
-    pointer-events: none;
-    z-index: 1;
-}
-
-.founder-photo {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    object-position: center;
-    border: 1px solid rgba(255,255,255,.35);
-}
-
-/* PHOTO CAPTION */
-
-.photo-caption {
-    position: absolute;
-    left: -22px;
-    bottom: 22px;
-    z-index: 2;
-    min-width: 210px;
-    padding: 15px 22px;
-    background: rgba(5,19,36,.96);
-    border: 1px solid var(--gold);
-    box-shadow: 0 12px 30px #0003;
-}
-
-.photo-caption strong {
-    display: block;
-    font: 22px Georgia, serif;
-    color: var(--gold-light);
-}
-
-.photo-caption span {
-    font-size: 11px;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-    color: #d7dfeb;
-}
-
-/* GENERAL SECTIONS */
-
-section {
-    padding: 85px 0;
-}
-
-.section-heading {
-    text-align: center;
-    max-width: 720px;
-    margin: 0 auto 42px;
-}
-
-.section-title {
-    font: clamp(30px, 4vw, 43px)/1.2 Georgia, serif;
-    color: var(--navy);
-    font-weight: 400;
-}
-
-.gold-line {
-    width: 58px;
-    height: 2px;
-    background: var(--gold);
-    margin: 20px auto;
-}
-
-.section-intro {
-    color: var(--muted);
-    font-size: 15px;
-}
-
-.card {
-    background: white;
-    border: 1px solid #e9e3d7;
-    padding: clamp(25px, 4vw, 40px);
-    border-radius: 8px;
-    box-shadow: 0 14px 40px rgba(18,35,57,.05);
-}
-
-.card p + p {
-    margin-top: 16px;
-}
-
-/* COMPANY SECTION */
-
-.company-section {
-    background: #eeece5;
-}
-
-.services {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-    margin-top: 28px;
-}
-
-.service {
-    padding: 27px 20px;
-    background: white;
-    border: 1px solid #e6dfd1;
-    text-align: center;
-    border-radius: 6px;
-    font-weight: 700;
-    color: var(--navy);
-    transition: transform .25s, background .25s, color .25s;
-}
-
-.service:hover {
-    transform: translateY(-6px);
-    background: var(--navy);
-    color: white;
-}
-
-.service-icon {
-    display: block;
-    font-size: 30px;
-    color: var(--gold);
-    margin-bottom: 8px;
-}
-
-/* CONTACT SECTION */
-
-.contact-section {
-    background: linear-gradient(135deg, #020914, #10294a);
-    color: white;
-}
-
-.contact-section .section-title {
-    color: white;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-}
-
-.contact-item {
-    border: 1px solid rgba(214,173,88,.35);
-    background: rgba(255,255,255,.035);
-    padding: 22px 25px;
-    border-radius: 5px;
-    overflow-wrap: anywhere;
-}
-
-.contact-item strong {
-    display: block;
-    color: var(--gold-light);
-    font-size: 11px;
-    letter-spacing: 1.8px;
-    text-transform: uppercase;
-    margin-bottom: 7px;
-}
-
-.contact-item a {
-    color: #f2f4f7;
-    transition: color .2s;
-}
-
-.contact-item a:hover {
-    color: var(--gold-light);
-}
-
-.address {
-    grid-column: 1 / -1;
-}
-
-/* FOOTER */
-
-footer {
-    background: #020914;
-    color: #9ca8b8;
-    text-align: center;
-    padding: 22px;
-    font-size: 12px;
-    letter-spacing: .4px;
-}
-
-/* SCROLL ANIMATION */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity .7s ease, transform .7s ease;
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* TABLET */
-
-@media(max-width: 800px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-        gap: 45px;
-        text-align: center;
-        padding: 60px 0 75px;
-    }
-
-    .hero-copy {
-        margin-inline: auto;
-    }
-
-    .eyebrow {
-        justify-content: center;
-    }
-
-    .founder-visual {
-        margin: 0 auto;
-        width: min(100%, 390px);
-    }
-
-    .photo-caption {
-        left: -5px;
-    }
-
-    .services {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* MOBILE */
-
-@media(max-width: 560px) {
-    nav {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 20px 0;
-    }
-
-    .brand-logo {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    display: block;
-    flex-shrink: 0;
-}
-
-    .brand-name {
-        font-size: 11px;
-        letter-spacing: 1px;
-    }
-
-    .brand-text small {
-        font-size: 8px;
-        letter-spacing: 2px;
-    }
-
-    .nav-links {
-        width: 100%;
-        justify-content: space-between;
-        gap: 8px;
-        font-size: 12px;
-    }
-
-    .hero-content {
-        padding: 48px 0 65px;
-    }
-
-    .photo-frame {
-        width: min(82vw, 330px);
-    }
-
-    .photo-caption {
-        left: 0;
-        bottom: 12px;
-        min-width: 180px;
-        padding: 12px 16px;
-    }
-
-    .photo-caption strong {
-        font-size: 19px;
-    }
-
-    section {
-        padding: 62px 0;
-    }
-
-    .services {
-        gap: 12px;
-    }
-
-    .service {
-        padding: 20px 12px;
-        font-size: 14px;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .address {
-        grid-column: auto;
-    }
-}
-
-/* ACCESSIBILITY */
-
-@media(prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
-    .reveal {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07182d">
+
+    <title>Mr. Jeevan Raj | Prestige Metro Properties</title>
+
+    <style>
+        :root {
+            --navy: #07182d;
+            --navy-light: #102a4b;
+            --gold: #d6ad58;
+            --gold-light: #f3dfaa;
+            --cream: #f7f5ef;
+            --white: #ffffff;
+            --text: #182438;
+            --muted: #667085;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 105px;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1160px, 92%);
+            margin: auto;
+        }
+
+        /* STICKY HEADER & NAVBAR */
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(7, 24, 45, 0.96);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(214, 173, 88, 0.25);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+            transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .site-header.scrolled {
+            background: rgba(5, 18, 34, 0.98);
+            box-shadow: 0 8px 26px rgba(0, 0, 0, 0.45);
+            border-bottom-color: rgba(214, 173, 88, 0.4);
+        }
+
+        nav {
+            position: relative;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            padding: 14px 0;
+            transition: padding 0.3s ease;
+        }
+
+        .site-header.scrolled nav {
+            padding: 8px 0;
+        }
+
+        /* COMPANY LOGO + NAME */
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-shrink: 0;
+        }
+
+        .brand-logo {
+            width: 110px;
+            height: 110px;
+            object-fit: contain;
+            display: block;
+            flex-shrink: 0;
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+
+        .site-header.scrolled .brand-logo {
+            width: 75px;
+            height: 75px;
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            color: white;
+            background:
+                radial-gradient(circle at 78% 25%, rgba(45, 79, 122, .65), transparent 32%),
+                linear-gradient(130deg, #020914 0%, var(--navy) 55%, #17365c 100%);
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.4;
+        }
+
+        .brand-name {
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #fff;
+        }
+
+        .brand-text small {
+            display: block;
+            margin-top: 4px;
+            font-size: 9px;
+            letter-spacing: 4px;
+            color: var(--gold-light);
+        }
+
+        /* NAVIGATION */
+
+        .nav-links {
+            display: flex;
+            gap: 26px;
+            font-size: 13px;
+            color: #e6eaf0;
+        }
+
+        .nav-links a {
+            transition: color .25s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+
+        /* HERO CONTENT */
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            align-items: center;
+            gap: 70px;
+            padding: 82px 0 100px;
+        }
+
+        h1 {
+            font: clamp(42px, 6vw, 76px)/1.08 Georgia, serif;
+            font-weight: 400;
+            margin: 0 0 14px;
+            letter-spacing: -1.5px;
+        }
+
+        h1 span {
+            color: var(--gold-light);
+        }
+
+        .role {
+            color: var(--gold-light);
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            font-size: 15px;
+        }
+
+        .company-name {
+            font-size: 17px;
+            margin-top: 5px;
+            color: #e5ebf4;
+        }
+
+        .hero-copy {
+            max-width: 560px;
+            color: #cbd6e5;
+            font-size: 17px;
+            margin-top: 22px;
+        }
+
+        /* BUTTON */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 24px;
+            margin-top: 30px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 13px;
+            border-radius: 3px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+            transition: transform .25s, box-shadow .25s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 34px rgba(0, 0, 0, .28);
+        }
+
+        /* SQUARE FOUNDER PHOTO */
+
+        .founder-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+        }
+
+        .photo-frame {
+            position: relative;
+            width: min(100%, 390px);
+            aspect-ratio: 1 / 1;
+            padding: 9px;
+            background: linear-gradient(135deg,
+                    #f5df9d,
+                    #b9852b,
+                    #f1d88b,
+                    #8c641e);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, .4);
+            border-radius: 0;
+        }
+
+        .photo-frame::before {
+            content: "";
+            position: absolute;
+            inset: 5px;
+            border: 1px solid rgba(7, 24, 45, .55);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .founder-photo {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            border: 1px solid rgba(255, 255, 255, .35);
+        }
+
+        /* PHOTO CAPTION */
+
+        .photo-caption {
+            position: absolute;
+            left: -22px;
+            bottom: 22px;
+            z-index: 2;
+            min-width: 210px;
+            padding: 15px 22px;
+            background: rgba(5, 19, 36, .96);
+            border: 1px solid var(--gold);
+            box-shadow: 0 12px 30px #0003;
+        }
+
+        .photo-caption strong {
+            display: block;
+            font: 22px Georgia, serif;
+            color: var(--gold-light);
+        }
+
+        .photo-caption span {
+            font-size: 11px;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            color: #d7dfeb;
+        }
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 85px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 42px;
+        }
+
+        .section-title {
+            font: clamp(30px, 4vw, 43px)/1.2 Georgia, serif;
+            color: var(--navy);
+            font-weight: 400;
+        }
+
+        .gold-line {
+            width: 58px;
+            height: 2px;
+            background: var(--gold);
+            margin: 20px auto;
+        }
+
+        .section-intro {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e9e3d7;
+            padding: clamp(25px, 4vw, 40px);
+            border-radius: 8px;
+            box-shadow: 0 14px 40px rgba(18, 35, 57, .05);
+        }
+
+        .card p+p {
+            margin-top: 16px;
+        }
+
+        /* COMPANY SECTION */
+
+        .company-section {
+            background: #eeece5;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .service {
+            padding: 27px 20px;
+            background: white;
+            border: 1px solid #e6dfd1;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: 700;
+            color: var(--navy);
+            transition: transform .25s, background .25s, color .25s;
+        }
+
+        .service:hover {
+            transform: translateY(-6px);
+            background: var(--navy);
+            color: white;
+        }
+
+        .service-icon {
+            display: block;
+            font-size: 30px;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        /* CONTACT SECTION */
+
+        .contact-section {
+            background: linear-gradient(135deg, #020914, #10294a);
+            color: white;
+        }
+
+        .contact-section .section-title {
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .contact-item {
+            border: 1px solid rgba(214, 173, 88, .35);
+            background: rgba(255, 255, 255, .035);
+            padding: 22px 25px;
+            border-radius: 5px;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--gold-light);
+            font-size: 11px;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            margin-bottom: 7px;
+        }
+
+        .contact-item a {
+            color: #f2f4f7;
+            transition: color .2s;
+        }
+
+        .contact-item a:hover {
+            color: var(--gold-light);
+        }
+
+        .address {
+            grid-column: 1 / -1;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #020914;
+            color: #9ca8b8;
+            text-align: center;
+            padding: 22px;
+            font-size: 12px;
+            letter-spacing: .4px;
+        }
+
+        /* SCROLL ANIMATION */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* TABLET */
+
+        @media(max-width: 800px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 45px;
+                text-align: center;
+                padding: 60px 0 75px;
+            }
+
+            .hero-copy {
+                margin-inline: auto;
+            }
+
+            .founder-visual {
+                margin: 0 auto;
+                width: min(100%, 390px);
+            }
+
+            .photo-caption {
+                left: -5px;
+            }
+
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* MOBILE */
+
+        @media(max-width: 560px) {
+            nav {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 0;
+            }
+
+            .brand-logo {
+                width: 60px;
+                height: 60px;
+                object-fit: contain;
+                display: block;
+                flex-shrink: 0;
+            }
+
+            .site-header.scrolled nav {
+                padding: 6px 0;
+            }
+
+            .site-header.scrolled .brand-logo {
+                width: 48px;
+                height: 48px;
+            }
+
+            .brand-name {
+                font-size: 11px;
+                letter-spacing: 1px;
+            }
+
+            .brand-text small {
+                font-size: 8px;
+                letter-spacing: 2px;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: space-between;
+                gap: 8px;
+                font-size: 12px;
+            }
+
+            .hero-content {
+                padding: 48px 0 65px;
+            }
+
+            .photo-frame {
+                width: min(82vw, 330px);
+            }
+
+            .photo-caption {
+                left: 0;
+                bottom: 12px;
+                min-width: 180px;
+                padding: 12px 16px;
+            }
+
+            .photo-caption strong {
+                font-size: 19px;
+            }
+
+            section {
+                padding: 62px 0;
+            }
+
+            .services {
+                gap: 12px;
+            }
+
+            .service {
+                padding: 20px 12px;
+                font-size: 14px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .address {
+                grid-column: auto;
+            }
+        }
+
+        /* ACCESSIBILITY */
+
+        @media(prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header class="hero" id="home">
-    <div class="container">
+    <!-- STICKY SITE HEADER & NAVBAR -->
+    <header class="site-header" id="site-header">
+        <div class="container">
+            <nav aria-label="Main navigation">
 
-        <nav aria-label="Main navigation">
+                <!-- COMPANY LOGO BESIDE COMPANY NAME -->
+                <a href="#home" class="brand">
+                    <img src="prestige-logo.png" alt="Prestige Metro Properties Logo" class="brand-logo">
 
-            <!-- COMPANY LOGO BESIDE COMPANY NAME -->
-            <a href="#home" class="brand">
-                <img
-                    src="prestige-logo.png"
-                    alt="Prestige Metro Properties Logo"
-                    class="brand-logo"
-                >
-
-                <div class="brand-text">
-                    <div class="brand-name">
-                        PRESTIGE METRO PROPERTIES
+                    <div class="brand-text">
+                        <div class="brand-name">
+                            PRESTIGE METRO PROPERTIES
+                        </div>
+                        <small>WORLDWIDE REAL ESTATE</small>
                     </div>
-                    <small>WORLDWIDE REAL ESTATE</small>
-                </div>
-            </a>
+                </a>
 
-            <div class="nav-links">
-                <a href="#founder">Founder</a>
-                <a href="#company">Company</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
+                <div class="nav-links">
+                    <a href="#founder">Founder</a>
+                    <a href="#company">Company</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+
+            <div class="hero-content">
+
+                <div class="hero-text">
+                    <h1>Mr. <span>Jeevan Raj</span></h1>
+
+                    <div class="role">CEO &amp; Founder</div>
+
+                    <div class="company-name">
+                        Prestige Metro Properties
+                    </div>
+
+                    <p class="hero-copy">
+                        Building trust, creating opportunities, and helping
+                        people take confident steps toward their property goals.
+                    </p>
+
+                    <a href="tel:+917349496920" class="btn">
+                        Contact Founder ↗
+                    </a>
+                </div>
+
+                <!-- FOUNDER PHOTO -->
+                <div class="founder-visual">
+
+                    <div class="photo-frame">
+                        <img class="founder-photo" src="founder.jpeg"
+                            alt="Mr. Jeevan Raj, CEO and Founder of Prestige Metro Properties">
+                    </div>
+
+                    <div class="photo-caption">
+                        <strong>Jeevan Raj</strong>
+                        <span>CEO &amp; Founder</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDER SECTION -->
+
+    <section id="founder">
+        <div class="container reveal">
+
+            <div class="section-heading">
+                <h2 class="section-title">About Mr. Jeevan Raj</h2>
+                <div class="gold-line"></div>
             </div>
 
-        </nav>
-
-        <div class="hero-content">
-
-            <div class="hero-text">
-                <div class="eyebrow">
-                    Leadership · Vision · Real Estate
-                </div>
-
-                <h1>Mr. <span>Jeevan Raj</span></h1>
-
-                <div class="role">CEO &amp; Founder</div>
-
-                <div class="company-name">
-                    Prestige Metro Properties
-                </div>
-
-                <p class="hero-copy">
-                    Building trust, creating opportunities, and helping
-                    people take confident steps toward their property goals.
+            <div class="card">
+                <p>
+                    Mr. Jeevan Raj is the Founder and Chief Executive Officer of Prestige Metro Properties, bringing
+                    over 10 years of experience in the real-estate industry. His leadership is focused on building the
+                    company into a trusted and recognised real-estate brand, with a strong foundation in customer
+                    service, professional standards, and sustainable growth.
                 </p>
 
-                <a href="tel:+917349496920" class="btn">
-                    Contact Founder ↗
-                </a>
+                <p>
+                    His vision provides the strategic direction for the organisation and its continued growth in the
+                    real-estate sector.
+                </p>
             </div>
 
-            <!-- FOUNDER PHOTO -->
-            <div class="founder-visual">
+        </div>
+    </section>
 
-                <div class="photo-frame">
-                    <img
-                        class="founder-photo"
-                        src="founder.jpeg"
-                        alt="Mr. Jeevan Raj, CEO and Founder of Prestige Metro Properties"
-                    >
+    <!-- COMPANY SECTION -->
+
+    <section class="company-section" id="company">
+        <div class="container reveal">
+
+            <div class="section-heading">
+                <h2 class="section-title">
+                    About Prestige Metro Properties
+                </h2>
+
+                <div class="gold-line"></div>
+
+                <p class="section-intro">
+                    Real estate services built around professionalism
+                    and customer confidence.
+                </p>
+            </div>
+
+            <div class="card">
+                <p>
+                    Prestige Metro Properties is a Bengaluru-based real estate company specializing in
+                    land, plots, construction, and interiors.
+                    We offer professional property solutions to meet the needs of
+                    homebuyers, investors, and property owners.
+                </p>
+
+                <p>
+                    Our commitment is to provide reliable service,
+                    transparent communication, and personalized guidance throughout every real estate journey.
+                    We believe in building trust, creating valuable opportunities, and helping our customers make
+                    confident property decisions.
+                </p>
+            </div>
+
+            <div class="services" id="services">
+
+                <div class="service">
+                    <span class="service-icon">⌂</span>
+                    Land &amp; Plots
                 </div>
 
-                <div class="photo-caption">
-                    <strong>Jeevan Raj</strong>
-                    <span>CEO &amp; Founder</span>
+                <div class="service">
+                    <span class="service-icon">▦</span>
+                    Construction
+                </div>
+
+                <div class="service">
+                    <span class="service-icon">✧</span>
+                    Interiors
+                </div>
+
+                <div class="service">
+                    <span class="service-icon">◇</span>
+                    Real Estate
                 </div>
 
             </div>
 
         </div>
-    </div>
-</header>
+    </section>
 
-<!-- FOUNDER SECTION -->
+    <!-- CONTACT SECTION -->
 
-<section id="founder">
-    <div class="container reveal">
+    <section class="contact-section" id="contact">
+        <div class="container reveal">
 
-        <div class="section-heading">
-            <h2 class="section-title">About Mr. Jeevan Raj</h2>
-            <div class="gold-line"></div>
-        </div>
+            <div class="section-heading">
+                <h2 class="section-title">Let's Connect</h2>
 
-        <div class="card">
-            <p>
-                Mr. Jeevan Raj is the Founder and Chief Executive Officer of Prestige Metro Properties, bringing over 10 years of experience in the real-estate industry. His leadership is focused on building the company into a trusted and recognised real-estate brand, with a strong foundation in customer service, professional standards, and sustainable growth.
-            </p>
+                <div class="gold-line"></div>
 
-            <p>
-               His vision provides the strategic direction for the organisation and its continued growth in the real-estate sector.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<!-- COMPANY SECTION -->
-
-<section class="company-section" id="company">
-    <div class="container reveal">
-
-        <div class="section-heading">
-            <h2 class="section-title">
-                About Prestige Metro Properties
-            </h2>
-
-            <div class="gold-line"></div>
-
-            <p class="section-intro">
-                Real estate services built around professionalism
-                and customer confidence.
-            </p>
-        </div>
-
-        <div class="card">
-            <p>
-                Prestige Metro Properties is a Bengaluru-based real estate company specializing in land, plots, construction, and interiors. We offer professional property solutions to meet the needs of homebuyers, investors, and property owners.
-            </p>
-
-            <p>
-                Our commitment is to provide reliable service, transparent communication, and personalized guidance throughout every real estate journey. We believe in building trust, creating valuable opportunities, and helping our customers make confident property decisions.
-            </p>
-        </div>
-
-        <div class="services" id="services">
-
-            <div class="service">
-                <span class="service-icon">⌂</span>
-                Land &amp; Plots
+                <p class="section-intro" style="color:#cbd6e5">
+                    Get in touch with our founder and team.
+                </p>
             </div>
 
-            <div class="service">
-                <span class="service-icon">▦</span>
-                Construction
-            </div>
+            <div class="contact-grid">
 
-            <div class="service">
-                <span class="service-icon">✧</span>
-                Interiors
-            </div>
+                <div class="contact-item">
+                    <strong>Founder</strong>
+                    Mr. Jeevan Raj — CEO &amp; Founder
+                </div>
 
-            <div class="service">
-                <span class="service-icon">◇</span>
-                Real Estate
+                <div class="contact-item">
+                    <strong>Phone</strong>
+                    <a href="tel:+917349496920">
+                        +91 73494 96920
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <a href="mailto:jeevan.raj@prestigemetroproperties.com">
+                        jeevan.raj@prestigemetroproperties.com
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <strong>Website</strong>
+                    <a href="https://www.prestigemetroproperties.com" target="_blank" rel="noopener noreferrer">
+                        www.prestigemetroproperties.com
+                    </a>
+                </div>
+
+                <div class="contact-item address">
+                    <strong>Office Address</strong>
+
+                    2nd Floor, Arham Towers, AK Colony,<br>
+                    Off Krishna Rajendra Road, 7th Block,<br>
+                    Jayanagar, Bengaluru, Karnataka 560070
+                </div>
+
             </div>
 
         </div>
+    </section>
 
-    </div>
-</section>
+    <footer>
+        © Prestige Metro Properties | Worldwide Real Estate
+    </footer>
 
-<!-- CONTACT SECTION -->
+    <script>
+        const revealObserver = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.12 }
+        );
 
-<section class="contact-section" id="contact">
-    <div class="container reveal">
-
-        <div class="section-heading">
-            <h2 class="section-title">Let's Connect</h2>
-
-            <div class="gold-line"></div>
-
-            <p class="section-intro" style="color:#cbd6e5">
-                Get in touch with our founder and team.
-            </p>
-        </div>
-
-        <div class="contact-grid">
-
-            <div class="contact-item">
-                <strong>Founder</strong>
-                Mr. Jeevan Raj — CEO &amp; Founder
-            </div>
-
-            <div class="contact-item">
-                <strong>Phone</strong>
-                <a href="tel:+917349496920">
-                    +91 73494 96920
-                </a>
-            </div>
-
-            <div class="contact-item">
-                <strong>Email</strong>
-                <a href="mailto:jeevan.raj@prestigemetroproperties.com">
-                    jeevan.raj@prestigemetroproperties.com
-                </a>
-            </div>
-
-            <div class="contact-item">
-                <strong>Website</strong>
-                <a
-                    href="https://www.prestigemetroproperties.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    www.prestigemetroproperties.com
-                </a>
-            </div>
-
-            <div class="contact-item address">
-                <strong>Office Address</strong>
-
-                2nd Floor, Arham Towers, AK Colony,<br>
-                Off Krishna Rajendra Road, 7th Block,<br>
-                Jayanagar, Bengaluru, Karnataka 560070
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-<footer>
-    © Prestige Metro Properties | Worldwide Real Estate
-</footer>
-
-<script>
-const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                observer.unobserve(entry.target);
-            }
+        document.querySelectorAll(".reveal").forEach(element => {
+            revealObserver.observe(element);
         });
-    },
-    { threshold: 0.12 }
-);
 
-document.querySelectorAll(".reveal").forEach(element => {
-    revealObserver.observe(element);
-});
-</script>
+        // Sticky navbar scroll state
+        const siteHeader = document.getElementById("site-header");
+        if (siteHeader) {
+            const onScroll = () => {
+                if (window.scrollY > 25) {
+                    siteHeader.classList.add("scrolled");
+                } else {
+                    siteHeader.classList.remove("scrolled");
+                }
+            };
+            window.addEventListener("scroll", onScroll, { passive: true });
+            onScroll();
+        }
+    </script>
 
 </body>
+
 </html>
